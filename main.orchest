@@ -1,0 +1,87 @@
+{
+    "name": "Main",
+    "parameters": {},
+    "services": {
+        "postgres": {
+            "env_variables": {
+                "POSTGRES_HOST_AUTH_METHOD": "trust"
+            },
+            "image": "postgres",
+            "name": "postgres",
+            "order": 97,
+            "scope": [
+                "interactive",
+                "noninteractive"
+            ]
+        }
+    },
+    "settings": {
+        "auto_eviction": false,
+        "data_passing_memory_size": "1GB"
+    },
+    "steps": {
+        "60993717-db24-40b2-8159-84d26cf9a9ff": {
+            "environment": "9a2d2411-744d-4d94-8201-d192bc66581e",
+            "file_path": "extract.ipynb",
+            "incoming_connections": [
+                "fe44337a-ead2-4288-b435-b1516c9f04f3"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    283.5,
+                    80.00000000000001
+                ]
+            },
+            "parameters": {},
+            "title": "Extract data",
+            "uuid": "60993717-db24-40b2-8159-84d26cf9a9ff"
+        },
+        "c3588ca8-76b6-43b2-95f3-548572280bfe": {
+            "environment": "9a2d2411-744d-4d94-8201-d192bc66581e",
+            "file_path": "visualize.ipynb",
+            "incoming_connections": [
+                "60993717-db24-40b2-8159-84d26cf9a9ff"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    547,
+                    80
+                ]
+            },
+            "parameters": {},
+            "title": "Visualize",
+            "uuid": "c3588ca8-76b6-43b2-95f3-548572280bfe"
+        },
+        "fe44337a-ead2-4288-b435-b1516c9f04f3": {
+            "environment": "9a2d2411-744d-4d94-8201-d192bc66581e",
+            "file_path": "populate.ipynb",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    20,
+                    80.00000000000003
+                ]
+            },
+            "parameters": {},
+            "title": "Populate database",
+            "uuid": "fe44337a-ead2-4288-b435-b1516c9f04f3"
+        }
+    },
+    "uuid": "791cbeb7-c3b5-43b8-a894-7b82804fa85f",
+    "version": "1.0.0"
+}
